@@ -10,11 +10,12 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "we-chat",
       debugShowCheckedModeBanner: false,
-      // initialRoute: "/table",
+      initialRoute: "/",
       theme: ThemeData(
           appBarTheme: const AppBarTheme(
-              backgroundColor: Colors.white70,
-              // color: Color(0xF4F4F4),r
+              backgroundColor: Colors.blue,
+              // backgroundColor: Colors.red,
+              // color: Colors.white70,
               elevation: 1.0,
               centerTitle: true,
               foregroundColor: Colors.black),
