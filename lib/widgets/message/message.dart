@@ -27,6 +27,34 @@ class Message extends StatefulWidget {
 //   return list.toList();
 // }
 
+class _MessageState extends State<Message> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          elevation: 0,
+          title: const Text("消息"),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.add_circle_outline_rounded))
+          ],
+        ),
+        // body: ListView(
+        //   children: _getMessageList(),
+        // )
+        body: KeepAliveWrapper(
+          KeepAlive: true,
+          child: ListView.builder(
+            itemBuilder: _getMessageList,
+            itemCount: messages.length + 1,
+          ),
+        ));
+    // body: ListView.builder(itemBuilder: itemBuilder),
+  }
+}
+
 class MessageSearch extends StatelessWidget {
   const MessageSearch({super.key});
 
@@ -69,46 +97,28 @@ class MessageSearch extends StatelessWidget {
 
 Widget _getMessageList(BuildContext context, int index) {
   if (index == 0) {
-    return MessageSearch();
+    return const MessageSearch();
   }
   index--;
-  return ListTile(
-    key: ValueKey(messages[index]["id"]),
-    leading: Image.network(messages[index]["avatar"]),
-    title: Text(messages[index]["name"]),
-    subtitle: Text(messages[index]["content"]),
-    // 聊天内容样式
-    subtitleTextStyle: const TextStyle(
-      // 文本溢出，省略号代替
-      overflow: TextOverflow.ellipsis,
+  return Container(
+    // : Colors.white,
+    decoration: const BoxDecoration(
+        color: Colors.white,
+        // 只设置下边框有线
+        border: Border.symmetric(
+            horizontal: BorderSide(width: 0.1, color: Colors.grey))),
+    child: ListTile(
+      key: ValueKey(messages[index]["id"]),
+      leading: Image.network(messages[index]["avatar"]),
+      title: Text(messages[index]["name"]),
+      subtitle: Text(messages[index]["content"]),
+      // 聊天内容样式
+      subtitleTextStyle: const TextStyle(
+        // 文本溢出，省略号代替
+        overflow: TextOverflow.ellipsis,
+      ),
+      trailing: Text(messages[index]["time_at"]),
+      // onTap: () => ,
     ),
-    trailing: Text(messages[index]["time_at"]),
-    // onTap: () => ,
   );
-}
-
-class _MessageState extends State<Message> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-          title: const Text("消息"),
-          actions: [
-            IconButton(
-                onPressed: () {}, icon: Icon(Icons.add_circle_outline_rounded))
-          ],
-        ),
-        // body: ListView(
-        //   children: _getMessageList(),
-        // )
-        body: KeepAliveWrapper(
-          KeepAlive: true,
-          child: ListView.builder(
-            itemBuilder: _getMessageList,
-            itemCount: messages.length + 1,
-          ),
-        ));
-    // body: ListView.builder(itemBuilder: itemBuilder),
-  }
 }

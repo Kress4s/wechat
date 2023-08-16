@@ -14,6 +14,7 @@ class _MyState extends State<My> {
       appBar: AppBar(
         title: const Text("我的"),
       ),
+      backgroundColor: const Color.fromARGB(255, 241, 239, 239),
       body: const Center(
         child: Text("我的"),
       ),
