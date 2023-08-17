@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../common/list_title_listener.dart';
 
 class FriendInfo extends StatefulWidget {
   const FriendInfo({super.key});
@@ -8,6 +9,7 @@ class FriendInfo extends StatefulWidget {
 }
 
 class _FriendInfoState extends State<FriendInfo> {
+  bool flag = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,71 +18,15 @@ class _FriendInfoState extends State<FriendInfo> {
         title: const Text("朋友圈"),
       ),
       body: ListView(
-        children: [
-          Container(
-            color: Colors.white,
-            child: ListTile(
-                // 是否可用
-                // enabled: false,
-                onTap: () => print("朋友圈"),
-                // selectedColor: const Color.fromARGB(255, 241, 239, 239),
-                // selectedColor: Colors.red,
-                // selected: true,
-                title: const Text("朋友圈"),
-                leading: SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset("./images/pengyouquan.png"),
-                )),
-          ),
-          const SizedBox(height: 10),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-                onTap: () => print("视频号"),
-                title: const Text("视频号"),
-                leading: Container(
-                  color: Colors.white,
-                  width: 30,
-                  height: 30,
-                  child: Image.asset("./images/weixinshipinhao.png"),
-                )),
-          ),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-                onTap: () => print("直播"),
-                title: const Text("直播"),
-                leading: SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset("./images/zhibo.png"),
-                )),
-          ),
-          const SizedBox(height: 10),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-                onTap: () => print("搜一搜"),
-                title: const Text("搜一搜"),
-                leading: SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset("./images/souyisou.png"),
-                )),
-          ),
-          const SizedBox(height: 10),
-          Container(
-            color: Colors.white,
-            child: ListTile(
-                onTap: () => print("附近"),
-                title: const Text("附近"),
-                leading: SizedBox(
-                  width: 30,
-                  height: 30,
-                  child: Image.asset("./images/fujin.png"),
-                )),
-          )
+        children: const [
+          ListTitleListener(title: "朋友圈", url: "./images/pengyouquan.png"),
+          SizedBox(height: 10),
+          ListTitleListener(title: "视频号", url: "./images/weixinshipinhao.png"),
+          ListTitleListener(title: "直播", url: "./images/zhibo.png"),
+          SizedBox(height: 10),
+          ListTitleListener(title: "搜一搜", url: "./images/souyisou.png"),
+          SizedBox(height: 10),
+          ListTitleListener(title: "附近", url: "./images/fujin.png"),
         ],
       ),
     );
