@@ -6,8 +6,13 @@ class ListTitleListener extends StatefulWidget {
   final String title;
   final String url;
   final bool enable;
+  final bool isLocal;
   const ListTitleListener(
-      {super.key, required this.title, required this.url, this.enable = true});
+      {super.key,
+      required this.title,
+      required this.url,
+      this.enable = true,
+      this.isLocal = true});
 
   @override
   State<ListTitleListener> createState() => _ListTitleListenerState();
@@ -36,7 +41,9 @@ class _ListTitleListenerState extends State<ListTitleListener> {
               leading: SizedBox(
                 width: 30,
                 height: 30,
-                child: Image.asset(widget.url),
+                child: widget.isLocal
+                    ? Image.asset(widget.url)
+                    : Image.network(widget.url),
               )),
         )));
   }

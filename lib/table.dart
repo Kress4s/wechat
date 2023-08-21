@@ -18,7 +18,12 @@ class _TableState extends State<Table> {
   @override
   void initState() {
     super.initState();
-    tables = [const Message(), const Contact(), const FriendInfo(), const My()];
+    tables = [
+      const Messages(),
+      const Contact(),
+      const FriendInfo(),
+      const My()
+    ];
   }
 
   @override
