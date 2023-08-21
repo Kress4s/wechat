@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import "../../database/message/messages.dart";
 import '../tools/keepAliveWrapper.dart';
+import 'pop_menu.dart';
 
 class Messages extends StatefulWidget {
   const Messages({super.key});
@@ -36,21 +37,32 @@ class _MessagesState extends State<Messages> {
           elevation: 0,
           title: const Text("消息"),
           actions: [
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(Icons.add_circle_outline_rounded))
+            // IconButton(
+            //     onPressed: () {},
+            //     splashRadius: 0.1,
+            //     icon: const Icon(Icons.add_circle_outline_rounded))
+            popupMenuButton(context)
           ],
         ),
-        // body: ListView(
-        //   children: _getMessageList(),
-        // )
         body: KeepAliveWrapper(
-          KeepAlive: true,
-          child: ListView.builder(
-            itemBuilder: _getMessageList,
-            itemCount: messages.length + 1,
-          ),
-        ));
+            KeepAlive: true,
+            child: Stack(
+              children: [
+                ListView.builder(
+                  itemBuilder: _getMessageList,
+                  itemCount: messages.length + 1,
+                ),
+                // Positioned(
+                //     top: 50,
+                //     right: 50,
+                //     child: FadeTransition(
+                //       opacity: Tween<double>(begin: 0.0, end: 1).animate(
+                //           CurvedAnimation(
+                //               parent: _controller, curve: Interval(0, 0.65))),
+                //       child: const PopMenus(),
+                //     ))
+              ],
+            )));
     // body: ListView.builder(itemBuilder: itemBuilder),
   }
 }
