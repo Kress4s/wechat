@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:wechat/database/circle_friend/circle.dart';
 import 'package:wechat/tools/time_parse.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 
 // 朋友圈页面
 class CircleFriend extends StatefulWidget {
@@ -26,6 +27,7 @@ class _CircleFriendState extends State<CircleFriend> {
           indent: 30,
         ),
       ),
+      // )
     );
   }
 }
@@ -43,8 +45,14 @@ Widget _getCircleFriendsInfo(BuildContext context, int index) {
   );
 }
 
-Widget _getImage(List<String> images) {
+Widget _getImage(List images) {
+  int _index = -1;
   // if (images.length == 1) {
+  if (images.isEmpty) {
+    // 没有图片，返回一个空的Widget,  SizedBox.shrink() 或者 Container()
+    // return const SizedBox.shrink();
+    return Container();
+  }
   int crossAxisCount = 1;
 
   if (images.length == 2) {
@@ -52,22 +60,27 @@ Widget _getImage(List<String> images) {
   } else {
     crossAxisCount = 3;
   }
-  return Expanded(
-      child: GridView.count(
-          crossAxisCount: crossAxisCount,
-          mainAxisSpacing: 2.0,
-          crossAxisSpacing: 2.0,
-          padding: const EdgeInsets.all(4.0),
-          children: images
-              .map((value) => SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: Image.network(
-                      images[0],
-                      fit: BoxFit.cover,
-                    ),
-                  ))
-              .toList()));
+  return GridView.count(
+      crossAxisCount: crossAxisCount,
+      mainAxisSpacing: 2.0,
+      crossAxisSpacing: 2.0,
+      padding: const EdgeInsets.all(4.0),
+
+      /// COLUMN中，生成九宫图,需要加上这个，
+      physics: const NeverScrollableScrollPhysics(), //增加  滑动类型设置
+      shrinkWrap: true, //增加 内容适配
+      ///
+      children: images
+          .map((value) => SizedBox(
+                key: ValueKey(_index++),
+                // height: 100,
+                // width: 100,
+                child: Image.network(
+                  value,
+                  fit: BoxFit.cover,
+                ),
+              ))
+          .toList());
 }
 
 // 朋友发布的内容
@@ -106,35 +119,34 @@ class _PublishedInfoState extends State<PublishedInfo> {
                       fit: BoxFit.cover),
                 )),
           ),
+          // 朋友圈内容区
           Expanded(
-              flex: 7,
-              child: Container(
-                // color: Colors.blue,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.content["name"],
-                      style: const TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromARGB(255, 68, 161, 237)),
-                    ),
-                    const SizedBox(
-                      height: 8,
-                    ),
-                    Text(widget.content["content"]),
-                    _getImage(widget.content["image"]),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
-                      child: Text(
-                        circleFriendsTimeAtParse(widget.content["create_at"]),
-                        style: const TextStyle(color: Colors.grey),
-                      ),
-                    )
-                  ],
+            flex: 7,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  widget.content["name"],
+                  style: const TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold,
+                      color: Color.fromARGB(255, 68, 161, 237)),
                 ),
-              ))
+                const SizedBox(
+                  height: 8,
+                ),
+                Text(widget.content["content"]),
+                _getImage(widget.content["image"]),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
+                  child: Text(
+                    circleFriendsTimeAtParse(widget.content["create_at"]),
+                    style: const TextStyle(color: Colors.grey),
+                  ),
+                )
+              ],
+            ),
+          )
         ],
       ),
     );

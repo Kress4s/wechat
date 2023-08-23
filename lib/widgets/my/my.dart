@@ -179,18 +179,25 @@ class _MyState extends State<My> {
             ),
           ),
           const SizedBox(height: 10),
-          const ListTitleListener(title: "服务", url: "./images/weixinzhifu.png"),
+          const ListTitleListener(
+              title: "服务", url: "./images/weixinzhifu.png", enable: false),
           const SizedBox(height: 10),
-          const ListTitleListener(title: "收藏", url: "./images/shoucang.png"),
           const ListTitleListener(
-              title: "朋友圈", url: "./images/pengyouquan.png"),
+              title: "收藏", url: "./images/shoucang.png", enable: false),
           const ListTitleListener(
-              title: "视频号", url: "./images/weixinshipinhao.png"),
+            title: "朋友圈",
+            url: "./images/pengyouquan.png",
+            enable: false,
+          ),
           const ListTitleListener(
-              title: "卡包", url: "./images/weixinqiabao.png"),
-          const ListTitleListener(title: "表情", url: "./images/biaoqing.png"),
+              title: "视频号", url: "./images/weixinshipinhao.png", enable: false),
+          const ListTitleListener(
+              title: "卡包", url: "./images/weixinqiabao.png", enable: false),
+          const ListTitleListener(
+              title: "表情", url: "./images/biaoqing.png", enable: false),
           const SizedBox(height: 10),
-          const ListTitleListener(title: "设置", url: "./images/shezhi.png"),
+          const ListTitleListener(
+              title: "设置", url: "./images/shezhi.png", enable: false),
         ],
       ),
     );

@@ -35,8 +35,13 @@ class _ListTitleListenerState extends State<ListTitleListener> {
           },
           onPointerUp: (detail) {
             _flag.value = !_flag.value;
-            Get.toNamed("/friend_info/circle_friend");
+            if (widget.enable) {
+              Get.toNamed("/friend_info/circle_friend");
+            }
           },
+          // onPointerMove: (event) {
+          //   _flag.value = !_flag.value;
+          // },
           child: ListTile(
               // 是否可用
               enabled: widget.enable,

@@ -37,9 +37,10 @@ List<Map> circleFriendInfo = [
       "https://up.enterdesk.com/edpic_source/3d/42/3e/3d423e3cb05d7edc35c38e3173af2a0d.jpg",
       "https://up.enterdesk.com/edpic_source/84/f7/fc/84f7fcc08f21419a860dbedde45fe233.jpg",
       "https://up.enterdesk.com/edpic_source/63/59/f7/6359f76264e2332c95faa88a1d8d0964.jpg",
-      "https://up.enterdesk.com/edpic_source/88/fd/a9/88fda9d88e27be807b0e97eaa2a99a3f.jpg"
-          "https://up.enterdesk.com/edpic_source/6b/49/56/6b49564334e46d8adaf0ff4c1aa6c599.jpg",
-      "https://up.enterdesk.com/edpic_source/05/85/a7/0585a766f5d7702e82f3caf317e6491b.jpg"
+      "https://up.enterdesk.com/edpic_source/88/fd/a9/88fda9d88e27be807b0e97eaa2a99a3f.jpg",
+      "https://up.enterdesk.com/edpic_source/6b/49/56/6b49564334e46d8adaf0ff4c1aa6c599.jpg",
+      // "https://up.enterdesk.com/edpic_source/05/85/a7/0585a766f5d7702e82f3caf317e6491b.jpg",
+      "https://up.enterdesk.com/edpic_source/3f/6c/5e/3f6c5e9d61b896eef328df2479ec1887.jpg"
     ],
     "create_at": "2023-08-22 13:01:50"
   },
@@ -50,9 +51,7 @@ List<Map> circleFriendInfo = [
     "avatar":
         "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F3a2f9e13-ac28-467f-8ccc-e024f5e81c0a%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1694699391&t=3ebbadab2ee77b5a8485fc861d6f5a4e",
     "content": "咨询下广大朋友圈, 推荐附近的美食",
-    "image": [
-      "https://up.enterdesk.com/edpic_source/05/85/a7/0585a766f5d7702e82f3caf317e6491b.jpg"
-    ],
+    "image": [],
     "create_at": "2023-08-01 13:01:50"
   },
 ];
