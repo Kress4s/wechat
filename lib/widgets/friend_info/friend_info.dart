@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../common/list_title_listener.dart';
 
+// 底部导航 朋友圈
 class FriendInfo extends StatefulWidget {
   const FriendInfo({super.key});
 
@@ -15,7 +16,7 @@ class _FriendInfoState extends State<FriendInfo> {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 241, 239, 239),
       appBar: AppBar(
-        title: const Text("朋友圈"),
+        title: const Text("发现"),
       ),
       body: ListView(
         children: const [

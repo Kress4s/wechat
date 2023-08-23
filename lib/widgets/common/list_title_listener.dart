@@ -33,7 +33,10 @@ class _ListTitleListenerState extends State<ListTitleListener> {
             // print("用户手指按下：${s.globalPosition}");
             _flag.value = !_flag.value;
           },
-          onPointerUp: (detail) => _flag.value = !_flag.value,
+          onPointerUp: (detail) {
+            _flag.value = !_flag.value;
+            Get.toNamed("/friend_info/circle_friend");
+          },
           child: ListTile(
               // 是否可用
               enabled: widget.enable,

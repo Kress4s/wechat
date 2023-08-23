@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'table.dart' as t;
+import 'package:wechat/routes/route.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
             elevation: 1.0,
           )),
       home: const t.Table(),
+      getPages: AppRouters.router,
+      // Getx的定义的路由切换动画（可以选择，当前是从右到左）
+      defaultTransition: Transition.rightToLeft,
     );
   }
 }
