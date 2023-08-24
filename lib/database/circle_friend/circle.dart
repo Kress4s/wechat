@@ -20,8 +20,8 @@ List<Map> circleFriendInfo = [
         "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F1e0466ff-3a60-4544-9630-318439662daf%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1694699278&t=7639505052eeda5c80ebd5de6eee0e97",
     "content": "古代和现代的碰撞~可还行??",
     "image": [
-      "https://up.enterdesk.com/edpic_source/45/67/27/456727d95737d0632dd52d9362e7d2ca.jpg",
-      "https://up.enterdesk.com/edpic_source/3f/6c/5e/3f6c5e9d61b896eef328df2479ec1887.jpg"
+      "https://img1.baidu.com/it/u=3263310172,69969925&fm=253&fmt=auto&app=138&f=JPEG?w=400&h=600",
+      "https://img95.699pic.com/xsj/1a/h1/5k.jpg%21/fw/700/watermark/url/L3hzai93YXRlcl9kZXRhaWwyLnBuZw/align/southeast"
     ],
     "create_at": "2023-08-21 12:13:50"
   },
@@ -34,13 +34,9 @@ List<Map> circleFriendInfo = [
     "content": "怀念逝去的青春~~~~啊, 小哥哥可还行？？",
     "image": [
       "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fsafe-img.xhscdn.com%2Fbw1%2F52bfd348-fe07-4da5-9902-9827765ccccf%3FimageView2%2F2%2Fw%2F1080%2Fformat%2Fjpg&refer=http%3A%2F%2Fsafe-img.xhscdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1695353372&t=d821af907e17edfe9fd144459eec5e23",
-      "https://up.enterdesk.com/edpic_source/3d/42/3e/3d423e3cb05d7edc35c38e3173af2a0d.jpg",
-      "https://up.enterdesk.com/edpic_source/84/f7/fc/84f7fcc08f21419a860dbedde45fe233.jpg",
-      "https://up.enterdesk.com/edpic_source/63/59/f7/6359f76264e2332c95faa88a1d8d0964.jpg",
-      "https://up.enterdesk.com/edpic_source/88/fd/a9/88fda9d88e27be807b0e97eaa2a99a3f.jpg",
-      "https://up.enterdesk.com/edpic_source/6b/49/56/6b49564334e46d8adaf0ff4c1aa6c599.jpg",
-      // "https://up.enterdesk.com/edpic_source/05/85/a7/0585a766f5d7702e82f3caf317e6491b.jpg",
-      "https://up.enterdesk.com/edpic_source/3f/6c/5e/3f6c5e9d61b896eef328df2479ec1887.jpg"
+      "https://img2.baidu.com/it/u=4087667003,3625162808&fm=253&fmt=auto&app=120&f=JPEG?w=800&h=1200",
+      "https://img0.baidu.com/it/u=323923124,2915444096&fm=253&fmt=auto&app=138&f=JPEG?w=378&h=500",
+      "https://img1.baidu.com/it/u=3728188192,2169206741&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500",
     ],
     "create_at": "2023-08-22 13:01:50"
   },
