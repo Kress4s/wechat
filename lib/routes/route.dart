@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import '../table.dart' as t;
-import '../widgets/friend_info/detail_page/circle_friend.dart';
+import '../pages/friend_info/detail_page/circle_friend.dart';
 
 class AppRouters {
   static final List<GetPage> router = [

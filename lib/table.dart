@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import "./widgets/contact/contact.dart";
-import "./widgets/my/my.dart";
-import './widgets/friend_info/friend_info.dart';
-import './widgets/message/message.dart';
-import './out_icon/table_icon.dart';
+import 'pages/contact/contact.dart';
+import 'pages/my/my.dart';
+import 'pages/friend_info/friend_info.dart';
+import 'pages/message/message.dart';
+import 'tools/out_icon/table_icon.dart';
 
 class Table extends StatefulWidget {
   const Table({super.key});
