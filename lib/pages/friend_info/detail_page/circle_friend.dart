@@ -1,8 +1,14 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:wechat/database/circle_friend/circle.dart';
+// import 'package:wechat/database/circle_friend/circle.dart';
+import 'package:wechat/services/controller/circle_friend.dart';
+import 'package:wechat/services/models/circle_friend.dart';
 import 'package:wechat/tools/time_parse.dart';
 import 'package:photo_view/photo_view_gallery.dart';
+
+// 初始化 controller
+
+final CircleFriendController controller = Get.put(CircleFriendController());
 
 // 朋友圈页面
 class CircleFriend extends StatefulWidget {
@@ -16,19 +22,26 @@ class _CircleFriendState extends State<CircleFriend> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: ListView.separated(
-        scrollDirection: Axis.vertical,
-        // 下划线
-        itemCount: circleFriendInfo.length + 1,
-        itemBuilder: _getCircleFriendsInfo,
-        separatorBuilder: (context, index) => const Divider(
-          height: 0.2,
-          indent: 30,
-        ),
-      ),
-      // )
-    );
+        backgroundColor: Colors.white,
+        body: Obx(() {
+          if (controller.isLoading.value) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else {
+            return ListView.separated(
+              scrollDirection: Axis.vertical,
+              // 下划线
+              // itemCount: circleFriendInfo.length + 1,
+              itemCount: controller.infoList.length + 1,
+              itemBuilder: _getCircleFriendsInfo,
+              separatorBuilder: (context, index) => const Divider(
+                height: 0.2,
+                indent: 30,
+              ),
+            );
+          }
+        }));
   }
 }
 
@@ -41,7 +54,7 @@ Widget _getCircleFriendsInfo(BuildContext context, int index) {
   index--;
   // 朋友圈信息内容
   return PublishedInfo(
-    content: circleFriendInfo[index],
+    content: controller.infoList[index],
     // index: index,
   );
 }
@@ -127,7 +140,8 @@ class Cover extends StatelessWidget {
 
 // 朋友发布的内容
 class PublishedInfo extends StatefulWidget {
-  final Map content;
+  // final Map content;
+  final CircleFriendInfo content;
   // final int index;
   const PublishedInfo({
     super.key,
@@ -157,8 +171,11 @@ class _PublishedInfoState extends State<PublishedInfo> {
                 padding: const EdgeInsets.fromLTRB(10, 0, 20, 0),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8),
-                  child: Image.network(widget.content["avatar"],
-                      fit: BoxFit.cover),
+                  // child: Image.network(widget.content["avatar"],
+                  //     fit: BoxFit.cover),
+                  // child: Image.network(widget.content["avatar"],
+                  child:
+                      Image.network(widget.content.avatar, fit: BoxFit.cover),
                 )),
           ),
           // 朋友圈内容区
@@ -168,7 +185,8 @@ class _PublishedInfoState extends State<PublishedInfo> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  widget.content["name"],
+                  // widget.content["name"],
+                  widget.content.name,
                   style: const TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold,
@@ -177,12 +195,15 @@ class _PublishedInfoState extends State<PublishedInfo> {
                 const SizedBox(
                   height: 8,
                 ),
-                Text(widget.content["content"]),
-                _getImage(widget.content["image"]),
+                // Text(widget.content["content"]),
+                Text(widget.content.content),
+                // _getImage(widget.content["image"]),
+                _getImage(widget.content.images),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                   child: Text(
-                    circleFriendsTimeAtParse(widget.content["create_at"]),
+                    // circleFriendsTimeAtParse(widget.content["create_at"]),
+                    circleFriendsTimeAtParse(widget.content.createAt),
                     style: const TextStyle(color: Colors.grey),
                   ),
                 )

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'table.dart' as t;
-import 'package:wechat/routes/route.dart';
+import 'package:wechat/routes/app_pages.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
