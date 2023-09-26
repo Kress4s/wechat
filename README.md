@@ -1,6 +1,6 @@
 # wechat
 
-A new Flutter project.
+A new Flutter project：imitate wechat page and some functions
 
 ## Getting Started
 
